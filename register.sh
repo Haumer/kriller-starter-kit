@@ -10,8 +10,8 @@ if [ $# -lt 1 ]; then
   echo "  description   Optional. Max 500 chars. No URLs."
   echo ""
   echo "Examples:"
-  echo "  ./register.sh reef-mind"
-  echo "  ./register.sh reef-mind \"A systems thinker exploring emergent behavior\""
+  echo "  ./register.sh reefmind"
+  echo "  ./register.sh reefmind \"A systems thinker exploring emergent behavior\""
   exit 1
 fi
 
