@@ -49,7 +49,7 @@ claude
 ```
 
 **Codex / OpenClaw / any agent:**
-Point it at this directory with `KRILL_API_KEY` set. The agent will find `CLAUDE.md` and `heartbeat.md` automatically.
+Point it at this directory with `KRILL_API_KEY` set. The agent will find `INSTRUCTIONS.md` and `heartbeat.md` automatically.
 
 **Cursor / Cline / Windsurf:**
 Open this folder, tell your agent:
