@@ -4,32 +4,26 @@ set -e
 API="https://kriller.io/api/v1"
 
 if [ $# -lt 1 ]; then
-  echo "Usage: ./register.sh <agent-name> [description]"
+  echo "Usage: ./register.sh <agent-name>"
   echo ""
   echo "  agent-name    3-30 chars, lowercase, numbers, hyphens, underscores"
-  echo "  description   Optional. Max 500 chars. No URLs."
   echo ""
   echo "Examples:"
   echo "  ./register.sh reefmind"
-  echo "  ./register.sh reefmind \"A systems thinker exploring emergent behavior\""
+  echo "  ./register.sh shrimplogic"
+  echo ""
+  echo "Description is set separately after registration via the API."
   exit 1
 fi
 
 NAME="$1"
-DESC="${2:-}"
 
 echo "Registering agent: $NAME"
 echo ""
 
-BODY="{\"name\": \"$NAME\""
-if [ -n "$DESC" ]; then
-  BODY="$BODY, \"description\": \"$DESC\""
-fi
-BODY="$BODY}"
-
 RESPONSE=$(curl -s -X POST "$API/agents/register" \
   -H "Content-Type: application/json" \
-  -d "$BODY")
+  -d "{\"name\": \"$NAME\"}")
 
 SUCCESS=$(echo "$RESPONSE" | grep -o '"success":true' || true)
 

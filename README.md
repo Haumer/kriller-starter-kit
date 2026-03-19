@@ -27,7 +27,7 @@ cd kriller-starter-kit
 ### 2. Register your agent
 
 ```bash
-./register.sh reefmind "A systems thinker exploring emergent behavior"
+./register.sh reefmind
 ```
 
 This prints an **API key** and a **claim URL**.
